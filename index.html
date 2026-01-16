@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>خدمات طلابية ومعلمين وشركات | مكتبة خدمات طالب أون لاين</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتبة الأناقة - خدماتنا الاحترافية</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- رابط أيقونات Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap">
     <style>
         :root {
-            --primary: #2c5aa0;
-            --secondary: #4CAF50;
-            --accent: #FF9800;
-            --light: #f8f9fa;
-            --dark: #333;
-            --gray: #6c757d;
-            --border-radius: 12px;
-            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            --transition: all 0.3s ease;
+            --primary-color: #2563eb;
+            --secondary-color: #3b82f6;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --accent-1: #4f46e5;
+            --accent-2: #06b6d4;
+            --accent-3: #10b981;
+            --accent-4: #f59e0b;
+            --footer-bg: #1e293b;
+            --footer-text: #e2e8f0;
+            --whatsapp-color: #25D366;
         }
 
         * {
@@ -26,1243 +32,469 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
+        html, body {
+            height: 100%;
         }
 
         body {
-            font-family: 'Cairo', sans-serif;
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
             line-height: 1.6;
-            color: var(--dark);
-            background-color: #fff;
-            direction: rtl;
-            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        /* Header & Navigation - Mobile First */
+        /* ===== HEADER ===== */
         header {
-            background-color: var(--primary);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
-            padding: 1rem 0;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
-            z-index: 1000;
-            width: 100%;
+            z-index: 100;
         }
 
-        .header-content {
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .logo i {
-            color: var(--accent);
             font-size: 1.8rem;
-        }
-
-        /* Mobile Menu Toggle */
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
         .nav-links {
             display: flex;
-            gap: 1.5rem;
-            align-items: center;
+            gap: 30px;
+            list-style: none;
         }
 
         .nav-links a {
             color: white;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: var(--transition);
-            padding: 0.5rem;
-            white-space: nowrap;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
         }
 
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--accent);
+        .nav-links a:hover {
+            opacity: 0.8;
         }
 
-        .breadcrumb {
-            background-color: #f5f5f5;
-            padding: 0.8rem 0;
-            font-size: 0.85rem;
-            color: var(--gray);
-            border-bottom: 1px solid #eaeaea;
+        /* ===== MAIN CONTENT ===== */
+        main {
+            flex: 1;
+            padding: 60px 20px;
         }
 
-        .breadcrumb a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(44, 90, 160, 0.92), rgba(44, 90, 160, 0.88)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: white;
-            text-align: center;
-            padding: 3rem 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .hero h1 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            line-height: 1.3;
-        }
-
-        .hero h2 {
-            font-size: 1.4rem;
-            margin-bottom: 1.5rem;
-            color: var(--accent);
-            font-weight: 600;
-        }
-
-        .hero p {
-            font-size: 1rem;
-            max-width: 800px;
-            margin: 0 auto 1.5rem;
-            line-height: 1.8;
-            opacity: 0.95;
-        }
-
-        /* Services Sections */
-        .service-section {
-            margin: 3rem 0;
-            padding: 1rem 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 2.5rem;
-            padding-bottom: 1rem;
-            position: relative;
-        }
-
-        .section-header h2 {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-
-        .section-header .section-subtitle {
-            color: var(--gray);
-            font-size: 1rem;
-            max-width: 700px;
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        .section-header:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 50%;
-            transform: translateX(50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--accent);
-            border-radius: 2px;
-        }
-
-        /* Services Grid - Responsive */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .service-card {
-            background-color: white;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
+        .page-header {
             text-align: center;
-            padding: 1.5rem 1rem;
-            border-top: 4px solid var(--primary);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
+            margin-bottom: 60px;
         }
 
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        .page-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
         }
 
-        .service-number {
-            background-color: var(--primary);
-            color: white;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            font-weight: 700;
-            font-size: 1rem;
-            flex-shrink: 0;
-        }
-
-        .service-card h3 {
-            color: var(--primary);
-            margin-bottom: 0.8rem;
-            font-size: 1.2rem;
-            font-weight: 600;
-            line-height: 1.4;
-            flex-grow: 1;
-        }
-
-        .service-card p {
-            color: var(--gray);
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        .service-icon {
-            font-size: 2.2rem;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-            flex-shrink: 0;
-        }
-
-        /* Company Services */
-        .company-services {
-            background-color: #f8f9fa;
-            padding: 3rem 0;
-            margin: 2rem 0;
-        }
-
-        .company-services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .company-service {
-            background-color: white;
-            padding: 1.8rem 1.2rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            text-align: center;
-            border-right: 4px solid var(--secondary);
-            transition: var(--transition);
-        }
-
-        .company-service:hover {
-            transform: translateY(-5px);
-        }
-
-        .company-service h3 {
-            color: var(--primary);
-            margin: 1rem 0 0.8rem;
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
-
-        /* Partners */
-        .partners {
-            padding: 3rem 0;
-            text-align: center;
-        }
-
-        .partners-grid {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .partner-logo {
-            width: 130px;
-            height: 85px;
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-            font-weight: 700;
-            color: var(--primary);
+        .page-header p {
             font-size: 1.1rem;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-            padding: 0.5rem;
+            color: var(--text-muted);
         }
 
-        .partner-logo:hover {
-            transform: scale(1.05);
-        }
-
-        /* Contact Section */
-        .contact-section {
-            background-color: var(--primary);
-            color: white;
-            padding: 3.5rem 0;
-        }
-
-        .contact-grid {
+        .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-            margin-top: 2rem;
+            gap: 30px;
         }
 
-        .contact-info h3 {
-            margin-bottom: 1.5rem;
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+        }
+
+        .card.cat-1 { border-top-color: var(--accent-1); }
+        .card.cat-2 { border-top-color: var(--accent-2); }
+        .card.cat-3 { border-top-color: var(--accent-3); }
+        .card.cat-4 { border-top-color: var(--accent-4); }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .card h2 {
             font-size: 1.5rem;
-            color: var(--accent);
-            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-main);
         }
 
-        .contact-info p {
-            margin-bottom: 1.2rem;
-            font-size: 1rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 0.8rem;
+        .card ul {
+            list-style: none;
         }
 
-        .contact-info i {
-            color: var(--accent);
-            font-size: 1.2rem;
-            margin-top: 0.2rem;
-            flex-shrink: 0;
+        .card ul li {
+            margin-bottom: 10px;
+            padding-right: 25px;
+            position: relative;
+            color: var(--text-muted);
+            font-size: 0.95rem;
         }
 
-        /* Chat Widget - Mobile Optimized */
-        .chat-widget {
+        .card ul li::before {
+            content: '•';
+            position: absolute;
+            right: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* ===== WHATSAPP BUTTON ===== */
+        .whatsapp-float {
             position: fixed;
-            bottom: 1.5rem;
-            left: 1.5rem;
-            z-index: 1000;
-        }
-
-        .chat-button {
-            background-color: var(--secondary);
-            color: white;
-            width: 56px;
-            height: 56px;
+            bottom: 30px;
+            left: 30px;
+            width: 70px;
+            height: 70px;
+            background-color: var(--whatsapp-color);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.3rem;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: var(--transition);
-            border: none;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+            text-decoration: none;
         }
 
-        .chat-button:hover {
+        .whatsapp-float:hover {
             transform: scale(1.1);
-            background-color: #3d8b40;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
         }
 
-        .chat-box {
+        .whatsapp-float i {
+            font-size: 2.2rem;
+            color: white;
+        }
+
+        .whatsapp-tooltip {
             position: absolute;
-            bottom: 70px;
-            left: 0;
-            width: 300px;
-            max-width: 90vw;
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-            display: none;
-            animation: slideUp 0.3s ease;
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .chat-header {
-            background-color: var(--primary);
+            right: 80px;
+            background-color: var(--footer-bg);
             color: white;
-            padding: 1.2rem;
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-
-        .chat-body {
-            padding: 1.5rem;
-            color: var(--dark);
-        }
-
-        .chat-message {
-            background-color: #f1f1f1;
-            padding: 1rem;
-            border-radius: 10px;
-            margin-bottom: 1.2rem;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        .chat-input {
-            width: 100%;
-            padding: 0.9rem 1rem;
-            border: 1px solid #ddd;
+            padding: 8px 15px;
             border-radius: 8px;
-            margin-top: 0.8rem;
-            font-family: 'Cairo', sans-serif;
-            font-size: 0.95rem;
-            transition: var(--transition);
+            font-size: 0.9rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            white-space: nowrap;
         }
 
-        .chat-input:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.1);
+        .whatsapp-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            transform: translateY(-50%);
+            border-width: 8px;
+            border-style: solid;
+            border-color: transparent transparent transparent var(--footer-bg);
         }
 
-        .chat-send {
-            background-color: var(--secondary);
-            color: white;
-            border: none;
-            padding: 0.9rem 1.5rem;
-            border-radius: 8px;
-            margin-top: 1rem;
-            cursor: pointer;
-            width: 100%;
-            font-family: 'Cairo', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            transition: var(--transition);
+        .whatsapp-float:hover .whatsapp-tooltip {
+            opacity: 1;
+            visibility: visible;
+            right: 85px;
         }
 
-        .chat-send:hover {
-            background-color: #3d8b40;
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
         }
 
-        /* Footer */
+        /* ===== FOOTER ===== */
         footer {
-            background-color: #222;
-            color: #ddd;
-            padding: 3rem 0 1.5rem;
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
+            padding: 50px 20px 30px;
+            margin-top: auto;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2.5rem;
-            margin-bottom: 2.5rem;
+            gap: 40px;
+            margin-bottom: 40px;
         }
 
         .footer-section h3 {
-            color: white;
-            margin-bottom: 1.2rem;
-            font-size: 1.3rem;
-            font-weight: 600;
-            position: relative;
-            padding-bottom: 0.8rem;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            font-weight: 700;
         }
 
-        .footer-section h3:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 50px;
-            height: 3px;
-            background-color: var(--accent);
+        .footer-section ul {
+            list-style: none;
         }
 
-        .footer-section p {
-            margin-bottom: 1rem;
-            line-height: 1.7;
-            font-size: 0.95rem;
+        .footer-section ul li {
+            margin-bottom: 12px;
+            padding-right: 0;
         }
 
-        .footer-links a {
-            color: #ddd;
+        .footer-section a {
+            color: var(--footer-text);
             text-decoration: none;
-            display: block;
-            margin-bottom: 0.8rem;
-            transition: var(--transition);
-            font-size: 0.95rem;
+            transition: color 0.3s ease;
         }
 
-        .footer-links a:hover {
-            color: var(--accent);
-            padding-right: 5px;
+        .footer-section a:hover {
+            color: var(--secondary-color);
         }
 
-        .social-icons {
-            display: flex;
-            gap: 0.8rem;
-            margin-top: 1.2rem;
-        }
-
-        .social-icons a {
-            color: white;
-            background-color: #444;
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
+        .contact-info {
             display: flex;
             align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-            font-size: 1rem;
+            gap: 10px;
+            margin-bottom: 15px;
         }
 
-        .social-icons a:hover {
-            background-color: var(--primary);
-            transform: translateY(-3px);
+        .contact-info span {
+            font-size: 1.2rem;
         }
 
-        .copyright {
-            padding-top: 1.5rem;
-            border-top: 1px solid #444;
+        .working-hours li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .footer-divider {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
             text-align: center;
+            color: var(--text-muted);
             font-size: 0.9rem;
-            color: #aaa;
-            line-height: 1.6;
         }
 
-        /* Tablet Styles (768px and up) */
-        @media (min-width: 768px) {
-            html {
-                font-size: 17px;
-            }
-
-            .container {
-                padding: 0 1.5rem;
-            }
-
-            .hero {
-                padding: 4rem 1.5rem;
-            }
-
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero h2 {
-                font-size: 1.6rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .section-header h2 {
-                font-size: 2rem;
-            }
-
-            .services-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-                gap: 1.8rem;
-            }
-
-            .service-card {
-                padding: 2rem 1.5rem;
-            }
-
-            .service-card h3 {
-                font-size: 1.3rem;
-            }
-
-            .company-services-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-                gap: 2rem;
-            }
-
-            .company-service {
-                padding: 2rem 1.5rem;
-            }
-
-            .chat-box {
-                width: 320px;
-            }
-
-            .chat-widget {
-                left: 2rem;
-                bottom: 2rem;
-            }
-        }
-
-        /* Desktop Styles (1024px and up) */
-        @media (min-width: 1024px) {
-            .container {
-                padding: 0 2rem;
-            }
-
-            .hero {
-                padding: 5rem 2rem;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero h2 {
-                font-size: 1.8rem;
-            }
-
-            .service-section {
-                margin: 4rem 0;
-            }
-
-            .services-grid {
-                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-                gap: 2rem;
-            }
-
-            .section-header h2 {
-                font-size: 2.2rem;
-            }
-
-            .partner-logo {
-                width: 150px;
-                height: 100px;
-                font-size: 1.2rem;
-            }
-
-            .chat-widget {
-                left: 2.5rem;
-                bottom: 2.5rem;
-            }
-
-            .chat-button {
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .page-header h1 { font-size: 2rem; }
+            .grid { grid-template-columns: 1fr; }
+            .nav-links { gap: 15px; font-size: 0.9rem; }
+            .header-container { flex-direction: column; gap: 15px; }
+            .footer-content { grid-template-columns: 1fr; gap: 30px; }
+            
+            .whatsapp-float {
                 width: 60px;
                 height: 60px;
-                font-size: 1.5rem;
+                bottom: 20px;
+                left: 20px;
             }
-        }
-
-        /* Mobile Menu Styles */
-        @media (max-width: 767px) {
-            .menu-toggle {
-                display: block;
+            
+            .whatsapp-float i {
+                font-size: 1.8rem;
             }
-
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                right: -100%;
-                width: 80%;
-                height: calc(100vh - 70px);
-                background-color: var(--primary);
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 2rem;
-                gap: 1rem;
-                transition: var(--transition);
-                z-index: 999;
-                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-                overflow-y: auto;
-            }
-
-            .nav-links.active {
-                right: 0;
-            }
-
-            .nav-links a {
-                font-size: 1.1rem;
-                padding: 0.8rem 1rem;
-                width: 100%;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            }
-
-            .nav-links a:last-child {
-                border-bottom: none;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-                gap: 1.2rem;
-            }
-
-            .service-card {
-                padding: 1.5rem 1rem;
-            }
-
-            .service-card h3 {
-                font-size: 1.2rem;
-                min-height: auto;
-            }
-
-            .company-services-grid {
-                grid-template-columns: 1fr;
-                gap: 1.2rem;
-            }
-
-            .partners-grid {
-                gap: 1rem;
-            }
-
-            .partner-logo {
-                width: 120px;
-                height: 80px;
-                font-size: 1rem;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .chat-box {
-                left: 50%;
-                transform: translateX(-50%);
-                bottom: 70px;
-            }
-        }
-
-        /* Small Mobile Devices (480px and below) */
-        @media (max-width: 480px) {
-            .hero {
-                padding: 2.5rem 1rem;
-            }
-
-            .hero h1 {
-                font-size: 1.6rem;
-            }
-
-            .hero h2 {
-                font-size: 1.2rem;
-            }
-
-            .hero p {
-                font-size: 0.95rem;
-            }
-
-            .section-header h2 {
-                font-size: 1.5rem;
-            }
-
-            .section-header .section-subtitle {
-                font-size: 0.9rem;
-            }
-
-            .service-card {
-                padding: 1.2rem 0.8rem;
-            }
-
-            .service-card h3 {
-                font-size: 1.1rem;
-            }
-
-            .service-card p {
-                font-size: 0.85rem;
-            }
-
-            .service-icon {
-                font-size: 2rem;
-            }
-
-            .partner-logo {
-                width: 100px;
-                height: 70px;
-                font-size: 0.9rem;
-            }
-
-            .contact-info p {
-                font-size: 0.95rem;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.5rem;
-            }
-
-            .contact-info i {
-                margin-top: 0;
-            }
-
-            .chat-box {
-                width: 280px;
-            }
-        }
-
-        /* Touch Device Optimizations */
-        @media (hover: none) and (pointer: coarse) {
-            .service-card:hover {
-                transform: none;
-            }
-
-            .service-card:active {
-                transform: scale(0.98);
-            }
-
-            .chat-button:active {
-                transform: scale(0.95);
-            }
-        }
-
-        /* High DPI Screens */
-        @media (-webkit-min-device-pixel-ratio: 2),
-        (min-resolution: 192dpi) {
-            body {
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
+            
+            .whatsapp-tooltip {
+                display: none;
             }
         }
     </style>
 </head>
-
 <body>
-    <!-- Header & Navigation -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <i class="fas fa-book-open"></i>
-                    <span>بصمة التغيير</span>
-                </div>
 
-                <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة">
-                    <i class="fas fa-bars"></i>
-                </button>
-
-                <nav class="nav-links" id="navLinks">
-                    <a href="#basma-services">خدمات بصمة التغيير</a>
-                    <a href="#research-services">خدمات البحث العلمي</a>
-                    <a href="#company-services">خدمات الشركات</a>
-                    <a href="#contact">تواصل معنا</a>
-                </nav>
-            </div>
-        </div>
-    </header>
-
-    <!-- Breadcrumb -->
-    <div class="breadcrumb">
-        <div class="container">
-            <span>الرئيسية » <a href="#">خدمات طلابية ومعلمين</a></span>
-        </div>
+<!-- ===== HEADER ===== -->
+<header>
+    <div class="header-container">
+        <div class="logo">✨ مكتبة الأناقة</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#services">الخدمات</a></li>
+                <li><a href="#contact">تواصل معنا</a></li>
+            </ul>
+        </nav>
     </div>
+</header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>موقع خدمات طالب في الرياض خدمات الكترونية</h1>
-            <h2>بصمة التغيير بيت الطالب والمعلم</h2>
-            <p>جميع خدماتك التعليمية والمكتبية في مكان واحد! مكتبة خدمات طالب تقدم ترجمة احترافية، تدقيق لغوي، عروض
-                بوربوينت، بحوث، مشاريع تخرج، تصميم حقائب تدريبية، محتوى، سيرة ذاتية، موشن جرافيك والمزيد – أون لاين
-                وباحتراف.</p>
+<!-- ===== MAIN CONTENT ===== -->
+<main>
+    <div class="container">
+        <div class="page-header">
+            <h1>خدماتنا المتكاملة</h1>
+            <p>نقدم حلولاً احترافية في مختلف المجالات الأكاديمية والتقنية</p>
         </div>
-    </section>
 
-    <!-- خدمات بصمة التغيير Section -->
-    <section class="service-section" id="basma-services">
-        <div class="container">
-            <div class="section-header">
-                <h2>خدمات بصمة التغيير</h2>
-                <p class="section-subtitle">خدمات تعليمية ومكتبية شاملة لطلاب المدارس والجامعات</p>
+        <div class="grid" id="services">
+            <!-- الفئة الأولى -->
+            <div class="card cat-1">
+                <span class="card-icon">📚</span>
+                <h2>الأعمال الأكاديمية والبحثية</h2>
+                <ul>
+                    <li>مشاريع التخرج</li>
+                    <li>البحوث العلمية</li>
+                    <li>حل الواجبات</li>
+                    <li>التكليفات (Assignments)</li>
+                    <li>الكويزات</li>
+                    <li>Critical Thinking</li>
+                    <li>Discussions / IQ Discussions</li>
+                    <li>تقارير تعاونية</li>
+                    <li>تقارير علمية وأدبية</li>
+                    <li>ملخصات ومراجعات</li>
+                </ul>
             </div>
 
-            <div class="services-grid" id="basma-services-grid">
-                <!-- Services 1-12 will be loaded here -->
-            </div>
-        </div>
-    </section>
-
-    <!-- خدمات البحث العلمية Section -->
-    <section class="service-section" id="research-services" style="background-color: #f8f9fa; padding: 2.5rem 0;">
-        <div class="container">
-            <div class="section-header">
-                <h2>خدمات البحث العلمية</h2>
-                <p class="section-subtitle">خدمات متخصصة للباحثين والأكاديميين</p>
-            </div>
-
-            <div class="services-grid" id="research-services-grid">
-                <!-- Services 13-16 will be loaded here -->
-            </div>
-        </div>
-    </section>
-
-    <!-- خدمات الشركات والجهات Section -->
-    <section class="company-services" id="company-services">
-        <div class="container">
-            <div class="section-header">
-                <h2>خدمات الشركات والجهات</h2>
-                <p class="section-subtitle">حلول متكاملة للمؤسسات والشركات والجهات التعليمية</p>
+            <!-- الفئة الثانية -->
+            <div class="card cat-2">
+                <span class="card-icon">🎨</span>
+                <h2>العروض والتصميمات البصرية</h2>
+                <ul>
+                    <li>عروض بوربوينت</li>
+                    <li>تصاميم بوسترات</li>
+                    <li>إنفوجرافيك</li>
+                    <li>خرائط ذهنية</li>
+                    <li>تصميمات أكاديمية</li>
+                    <li>تصاميم إبداعية</li>
+                </ul>
             </div>
 
-            <div class="company-services-grid">
-                <div class="company-service">
-                    <i class="fas fa-id-card service-icon"></i>
-                    <h3>بروفايل تعريفي احترافي</h3>
-                    <p>تصميم بروفايل تعريفي احترافي لشركتك يعكس هويتك ورسالتك</p>
-                </div>
-                <div class="company-service">
-                    <i class="fas fa-building service-icon"></i>
-                    <h3>الهوية المؤسسية</h3>
-                    <p>تصميم هوية مؤسسية متكاملة تشمل الشعار والألوان والخطوط</p>
-                </div>
-                <div class="company-service">
-                    <i class="fas fa-palette service-icon"></i>
-                    <h3>التصاميم</h3>
-                    <p>تصاميم جرافيك مبتكرة للمواد التسويقية والعروض التقديمية</p>
-                </div>
-                <div class="company-service">
-                    <i class="fas fa-file-alt service-icon"></i>
-                    <h3>المحتوى التعريفي</h3>
-                    <p>كتابة محتوى تعريفي احترافي لموقعك وموادك التسويقية</p>
-                </div>
-                <div class="company-service">
-                    <i class="fas fa-chalkboard-teacher service-icon"></i>
-                    <h3>خدمات المدربين</h3>
-                    <p>تصميم حقائب تدريبية وتطوير برامج تأهيل المدربين</p>
-                </div>
-                <div class="company-service">
-                    <i class="fas fa-video service-icon"></i>
-                    <h3>موشن جرافيك</h3>
-                    <p>إنتاج مقاطع موشن جرافيك احترافية للتسويق والتعليم</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Partners -->
-    <section class="partners">
-        <div class="container">
-            <div class="section-header">
-                <h2>شركاؤنا</h2>
-                <p class="section-subtitle">نعمل مع أفضل المؤسسات والجهات التعليمية</p>
+            <!-- الفئة الثالثة -->
+            <div class="card cat-3">
+                <span class="card-icon">🏗️</span>
+                <h2>الهندسة والتصميم المعماري</h2>
+                <ul>
+                    <li>مشاريع هندسية</li>
+                    <li>تصميم معماري</li>
+                    <li>AutoCAD</li>
+                    <li>SketchUp</li>
+                    <li>2D Designs</li>
+                    <li>3D Designs</li>
+                    <li>مخططات هندسية</li>
+                    <li>نماذج معمارية</li>
+                </ul>
             </div>
 
-            <div class="partners-grid">
-                <div class="partner-logo">جامعة الرياض</div>
-                <div class="partner-logo">مؤسسة التعليم</div>
-                <div class="partner-logo">مركز التدريب</div>
-                <div class="partner-logo">أكاديمية التميز</div>
-                <div class="partner-logo">مجموعة المعرفة</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 style="color: white;">تواصل معنا</h2>
-                <p class="section-subtitle" style="color: #ddd;">نحن هنا لمساعدتك على مدار الساعة</p>
-            </div>
-
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3>العنوان</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> الرياض - شارع صلاح الدين - الملز</p>
-                    <p><i class="fas fa-phone"></i> +966 12 345 6789</p>
-                    <p><i class="fas fa-envelope"></i> info@bassmh-sa.com</p>
-                    <p><i class="fas fa-globe"></i> www.bassmh-sa.com</p>
-                </div>
-                <div class="contact-info">
-                    <h3>ساعات العمل</h3>
-                    <p><i class="fas fa-clock"></i> الأحد - الخميس: 8 ص - 10 م</p>
-                    <p><i class="fas fa-clock"></i> الجمعة - السبت: 4 م - 10 م</p>
-                    <p><i class="fas fa-headset"></i> الدعم الفني: 24/7</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Chat Widget -->
-    <div class="chat-widget">
-        <div class="chat-button" id="chatToggle" aria-label="فتح الدردشة">
-            <i class="fas fa-comment"></i>
-        </div>
-        <div class="chat-box" id="chatBox">
-            <div class="chat-header">
-                مرحبا!
-            </div>
-            <div class="chat-body">
-                <div class="chat-message">
-                    كيف يمكنني المساعدة؟
-                </div>
-                <input type="text" class="chat-input" placeholder="اكتب رسالتك هنا..." aria-label="رسالة الدردشة">
-                <button class="chat-send">إرسال</button>
+            <!-- الفئة الرابعة -->
+            <div class="card cat-4">
+                <span class="card-icon">💻</span>
+                <h2>البرمجة والأعمال المهنية</h2>
+                <ul>
+                    <li>برمجة بجميع مقرراتها</li>
+                    <li>مشاريع برمجية</li>
+                    <li>أكواد وتصحيح أخطاء</li>
+                    <li>تصميم CV</li>
+                    <li>تطوير مشاريع تقنية</li>
+                    <li>تقارير تقنية</li>
+                    <li>أعمال متعلقة بالبزنس والتقنية</li>
+                </ul>
             </div>
         </div>
     </div>
+</main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>بصمة التغيير</h3>
-                    <p>جميع الخدمات التعليمية والمكتبية في مكان واحد. نقدم حلولاً متكاملة للطلاب والمعلمين والشركات.</p>
-                    <div class="social-icons">
-                        <a href="#" aria-label="تويتر"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="فيسبوك"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="انستغرام"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="لينكدإن"><i class="fab fa-linkedin"></i></a>
+<!-- ===== WHATSAPP FLOATING BUTTON ===== -->
+<a href="https://wa.me/966123456789" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+    <span class="whatsapp-tooltip">تواصل معنا عبر واتساب</span>
+</a>
+
+<!-- ===== FOOTER ===== -->
+<footer id="contact">
+    <div class="footer-container">
+        <div class="footer-content">
+            <!-- معلومات التواصل -->
+            <div class="footer-section">
+                <h3>📍 تواصل معنا</h3>
+                <div class="contact-info">
+                    <span>📌</span>
+                    <div>
+                        <p><strong>العنوان</strong></p>
+                        <p>الرياض - شارع صلاح الدين - الملز</p>
                     </div>
                 </div>
-                <div class="footer-section">
-                    <h3>روابط سريعة</h3>
-                    <div class="footer-links">
-                        <a href="#basma-services">خدمات بصمة التغيير</a>
-                        <a href="#research-services">خدمات البحث العلمي</a>
-                        <a href="#company-services">خدمات الشركات</a>
-                        <a href="#contact">تواصل معنا</a>
+                <div class="contact-info">
+                    <span>📞</span>
+                    <div>
+                        <p><a href="tel:+966123456789">+966 12 345 6789</a></p>
                     </div>
                 </div>
-                <div class="footer-section">
-                    <h3>الخدمات المميزة</h3>
-                    <div class="footer-links">
-                        <a href="#">الترجمة الاحترافية</a>
-                        <a href="#">البحوث العلمية</a>
-                        <a href="#">عروض البوربوينت</a>
-                        <a href="#">تصميم السير الذاتية</a>
+                <div class="contact-info">
+                    <span>✉️</span>
+                    <div>
+                        <p><a href="mailto:info@bassmh-sa.com">info@bassmh-sa.com</a></p>
                     </div>
                 </div>
             </div>
-            <div class="copyright">
-                &copy; 2025 بصمة التغيير - مكتبة خدمات طالب. جميع الحقوق محفوظة.
+
+            <!-- ساعات العمل -->
+            <div class="footer-section">
+                <h3>⏰ ساعات العمل</h3>
+                <ul class="working-hours">
+                    <li><strong>الأحد - الخميس:</strong> 8 ص - 10 م</li>
+                    <li><strong>الجمعة - السبت:</strong> 4 م - 10 م</li>
+                    <li style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1);">
+                        <strong>الدعم الفني:</strong> 24/7
+                    </li>
+                </ul>
+            </div>
+
+            <!-- الموقع الإلكتروني -->
+            <div class="footer-section">
+                <h3>🌐 موقعنا</h3>
+                <ul>
+                    <li><a href="http://www.bassmh-sa.com" target="_blank">www.bassmh-sa.com</a></li>
+                    <li style="margin-top: 20px; font-size: 0.9rem; color: var(--text-muted);">
+                        نحن هنا لمساعدتك على مدار الساعة
+                    </li>
+                </ul>
             </div>
         </div>
-    </footer>
 
-    <script>
-        // Services Data Organized by Sections
-        const basmaServices = [
-            { id: 1, name: "خدمات الترجمة", icon: "fas fa-language", desc: "ترجمة احترافية بجميع اللغات مع الحفاظ على المعنى الأصلي" },
-            { id: 2, name: "خدمة التدقيق اللغوي", icon: "fas fa-spell-check", desc: "تدقيق لغوي متكامل للنصوص العربية والإنجليزية" },
-            { id: 3, name: "خدمات دراسات الجدوى", icon: "fas fa-chart-line", desc: "إعداد دراسات جدوى اقتصادية متكاملة للمشاريع" },
-            { id: 4, name: "خدمات اعداد عروض البوربوينت", icon: "fas fa-desktop", desc: "تصميم عروض تقديمية احترافية وجذابة" },
-            { id: 5, name: "الكتابة والتنسيق على الوورد", icon: "fas fa-file-word", desc: "كتابة وتنسيق المستندات بشكل احترافي" },
-            { id: 6, name: "خدمات الاكسل", icon: "fas fa-file-excel", desc: "إنشاء الجداول والحسابات والرسوم البيانية" },
-            { id: 7, name: "البحوث العلمية", icon: "fas fa-search", desc: "إعداد البحوث العلمية وفق المنهجيات الأكاديمية" },
-            { id: 8, name: "مشاريع التخرج تصميم الحقائب التدريبية", icon: "fas fa-graduation-cap", desc: "تصميم مشاريع التخرج والحقائب التدريبية المتكاملة" },
-            { id: 9, name: "حل الاختبارات", icon: "fas fa-question-circle", desc: "حل الاختبارات والامتحانات بدقة عالية" },
-            { id: 10, name: "تحويل ملفات PDF", icon: "fas fa-file-pdf", desc: "تحويل الملفات بين الصيغ المختلفة مع الحفاظ على الجودة" },
-            { id: 11, name: "التنسيق والاخراج", icon: "fas fa-paint-brush", desc: "تنسيق وإخراج المستندات والبحوث بشكل احترافي" },
-            { id: 12, name: "كتابة المقالات", icon: "fas fa-edit", desc: "كتابة مقالات متخصصة في مختلف المجالات" }
-        ];
+        <!-- حقوق النشر -->
+        <div class="footer-divider">
+            <p>&copy; 2024 مكتبة الأناقة. جميع الحقوق محفوظة.</p>
+        </div>
+    </div>
+</footer>
 
-        const researchServices = [
-            { id: 13, name: "تصاميم الجرافيك", icon: "fas fa-palette", desc: "تصميم جرافيك احترافي للمواد العلمية والتعليمية" },
-            { id: 14, name: "تصميم السير الذاتية", icon: "fas fa-id-card", desc: "تصميم سير ذاتية احترافية تجذب انتباه أرباب العمل" },
-            { id: 15, name: "كتابة المحتوى", icon: "fas fa-pen-fancy", desc: "كتابة محتوى علمي وتعليمي متخصص" },
-            { id: 16, name: "حل الواجبات", icon: "fas fa-tasks", desc: "حل الواجبات والتمارين بجودة عالية" }
-        ];
-
-        // Generate Basma Services Grid
-        const basmaGrid = document.getElementById('basma-services-grid');
-
-        basmaServices.forEach(service => {
-            const serviceCard = document.createElement('div');
-            serviceCard.className = 'service-card';
-            serviceCard.innerHTML = `
-                <div class="service-number">${service.id}</div>
-                <i class="${service.icon} service-icon"></i>
-                <h3>${service.name}</h3>
-                <p>${service.desc}</p>
-            `;
-            basmaGrid.appendChild(serviceCard);
-        });
-
-        // Generate Research Services Grid
-        const researchGrid = document.getElementById('research-services-grid');
-
-        researchServices.forEach(service => {
-            const serviceCard = document.createElement('div');
-            serviceCard.className = 'service-card';
-            serviceCard.innerHTML = `
-                <div class="service-number">${service.id}</div>
-                <i class="${service.icon} service-icon"></i>
-                <h3>${service.name}</h3>
-                <p>${service.desc}</p>
-            `;
-            researchGrid.appendChild(serviceCard);
-        });
-
-        // Mobile Menu Toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-
-        menuToggle.addEventListener('click', function () {
-            navLinks.classList.toggle('active');
-            const icon = menuToggle.querySelector('i');
-            if (navLinks.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-                menuToggle.setAttribute('aria-label', 'إغلاق القائمة');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-                menuToggle.setAttribute('aria-label', 'فتح القائمة');
-            }
-        });
-
-        // Close menu when clicking outside on mobile
-        document.addEventListener('click', function (event) {
-            if (window.innerWidth <= 767) {
-                if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
-                    navLinks.classList.remove('active');
-                    const icon = menuToggle.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                    menuToggle.setAttribute('aria-label', 'فتح القائمة');
-                }
-            }
-        });
-
-        // Close menu when clicking a link on mobile
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', function () {
-                if (window.innerWidth <= 767) {
-                    navLinks.classList.remove('active');
-                    const icon = menuToggle.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                    menuToggle.setAttribute('aria-label', 'فتح القائمة');
-                }
-            });
-        });
-
-        // Chat functionality
-        const chatToggle = document.getElementById('chatToggle');
-        const chatBox = document.getElementById('chatBox');
-
-        chatToggle.addEventListener('click', function (e) {
-            e.stopPropagation();
-            if (chatBox.style.display === 'block') {
-                chatBox.style.display = 'none';
-            } else {
-                chatBox.style.display = 'block';
-            }
-        });
-
-        // Close chat when clicking outside
-        document.addEventListener('click', function (event) {
-            if (!chatBox.contains(event.target) && !chatToggle.contains(event.target)) {
-                chatBox.style.display = 'none';
-            }
-        });
-
-        // Send message functionality
-        const chatSend = document.querySelector('.chat-send');
-        const chatInput = document.querySelector('.chat-input');
-
-        chatSend.addEventListener('click', function () {
-            if (chatInput.value.trim() !== '') {
-                // In a real application, you would send this to a server
-                alert('شكراً لك! تم إرسال رسالتك وسيتم الرد عليك في أقرب وقت.');
-                chatInput.value = '';
-                chatBox.style.display = 'none';
-            }
-        });
-
-        chatInput.addEventListener('keypress', function (e) {
-            if (e.key === 'Enter') {
-                chatSend.click();
-            }
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    const offsetTop = targetElement.offsetTop - 80;
-
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-
-                    // Close chat if open
-                    chatBox.style.display = 'none';
-                }
-            });
-        });
-
-        // Highlight active section in navigation
-        const sections = document.querySelectorAll('section[id]');
-
-        function highlightNavLink() {
-            let scrollPosition = window.scrollY + 100;
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                const sectionId = section.getAttribute('id');
-
-                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                    document.querySelectorAll('.nav-links a').forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === `#${sectionId}`) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
-            });
-        }
-
-        window.addEventListener('scroll', highlightNavLink);
-        window.addEventListener('load', highlightNavLink);
-
-        // Handle window resize
-        let resizeTimer;
-        window.addEventListener('resize', function () {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(function () {
-                // Close mobile menu on larger screens
-                if (window.innerWidth > 767) {
-                    navLinks.classList.remove('active');
-                    const icon = menuToggle.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-            }, 250);
-        });
-
-        // Touch device optimizations
-        document.addEventListener('touchstart', function () { }, { passive: true });
-    </script>
 </body>
-
 </html>
